@@ -1,11 +1,11 @@
 import pickle as pk
 import random
 
-ch = input("Encript or Decript (1 or 2): ")
+ch = input("Encrypt or Decrypt (1 or 2): ")
 filename = input("Choose the file (txt files only!): ")
 random.seed(input("Enter the password: "))
 
-if ch == "1": # Encript
+if ch == "1": # Encrypt
     f = open(filename, "r")
     lst = []
     for i in f.read():
@@ -14,7 +14,7 @@ if ch == "1": # Encript
     pk.dump(lst, f1)
     f1.close()
 
-elif ch == "2": # Decript
+elif ch == "2": # Decrypt
     f = open(filename, "br")
     lst = pk.load(f)
     f1 = open(filename+".dec", "w")
